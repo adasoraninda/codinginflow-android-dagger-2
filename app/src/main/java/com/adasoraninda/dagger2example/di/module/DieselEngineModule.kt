@@ -2,13 +2,15 @@ package com.adasoraninda.dagger2example.di.module
 
 import com.adasoraninda.dagger2example.car.DieselEngine
 import com.adasoraninda.dagger2example.car.Engine
-import dagger.Binds
 import dagger.Module
+import dagger.Provides
 
 @Module
-abstract class DieselModule { // or use interface
+class DieselEngineModule(private val horsePower: Int) {
 
-    @Binds
-    abstract fun bindEngine(engine: DieselEngine): Engine
+    @Provides
+    fun provideEngine(): Engine {
+        return DieselEngine(horsePower)
+    }
 
 }

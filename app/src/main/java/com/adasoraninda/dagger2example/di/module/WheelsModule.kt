@@ -7,7 +7,7 @@ import dagger.Module
 import dagger.Provides
 
 @Module
-class WheelsModule {
+abstract class WheelsModule {
 
     companion object {
         @Provides
