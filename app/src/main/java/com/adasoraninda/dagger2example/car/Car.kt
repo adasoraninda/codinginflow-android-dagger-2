@@ -18,6 +18,7 @@ class Car @Inject constructor(
     }
 
     fun drive() {
+        engine.start()
         Log.d(TAG, "driving")
     }
 

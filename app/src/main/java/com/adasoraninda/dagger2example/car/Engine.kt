@@ -1,6 +1,7 @@
 package com.adasoraninda.dagger2example.car
 
-import javax.inject.Inject
+interface Engine {
 
-class Engine @Inject constructor() {
+    fun start()
+
 }
