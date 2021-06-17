@@ -1,6 +1,6 @@
 package com.adasoraninda.dagger2example.car
 
-class Wheels(private val rims: Rims, private val tires: Tires) {
+class Rims {
     // We don't own this class so we can't annotate it with @Inject
 
 }

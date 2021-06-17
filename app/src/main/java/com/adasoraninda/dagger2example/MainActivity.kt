@@ -3,7 +3,6 @@ package com.adasoraninda.dagger2example
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.adasoraninda.dagger2example.car.Car
-import com.adasoraninda.dagger2example.di.CarComponent
 import com.adasoraninda.dagger2example.di.DaggerCarComponent
 import javax.inject.Inject
 
