@@ -18,10 +18,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val component = (application as CarApp).getAppComponent()
-            .getActivityComponentBuilder()
-            .horsePower(150)
-            .engineCapacity(1400)
-            .build()
+            .getActivityComponentFactory()
+            .create(
+                horsePower = 150,
+                engineCapacity = 1400
+            )
 
         component.inject(this)
 

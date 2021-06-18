@@ -1,12 +1,10 @@
 package com.adasoraninda.dagger2example.di.component
 
 import com.adasoraninda.dagger2example.MainActivity
-import com.adasoraninda.dagger2example.di.module.DieselEngineModule
 import com.adasoraninda.dagger2example.di.module.PetrolEngineModule
 import com.adasoraninda.dagger2example.di.module.WheelsModule
 import com.adasoraninda.dagger2example.di.scope.PerActivity
 import dagger.BindsInstance
-import dagger.Component
 import dagger.Subcomponent
 import javax.inject.Named
 
@@ -17,16 +15,14 @@ import javax.inject.Named
 )
 interface ActivityComponent {
 
-    @Subcomponent.Builder
-    interface Builder {
+    @Subcomponent.Factory
+    interface Factory {
 
-        @BindsInstance
-        fun horsePower(@Named("horse power") horsePower: Int): Builder
+        fun create(
+            @BindsInstance @Named("horse power") horsePower: Int,
+            @BindsInstance @Named("engine capacity") engineCapacity: Int
+        ): ActivityComponent
 
-        @BindsInstance
-        fun engineCapacity(@Named("engine capacity") engineCapacity: Int): Builder
-
-        fun build(): ActivityComponent
     }
 
     fun inject(activity: MainActivity)
