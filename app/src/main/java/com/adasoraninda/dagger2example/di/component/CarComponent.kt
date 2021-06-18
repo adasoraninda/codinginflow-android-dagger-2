@@ -7,8 +7,10 @@ import com.adasoraninda.dagger2example.di.module.WheelsModule
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Named
+import javax.inject.Singleton
 
 // The Injector
+@Singleton
 @Component(modules = [WheelsModule::class, PetrolEngineModule::class])
 interface CarComponent {
 
